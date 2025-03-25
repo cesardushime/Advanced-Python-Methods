@@ -7,7 +7,7 @@ usernames = ['john', 'jane', 'doe']
 passwords = ['password', 'password123', 'password456']
 
 # zip the usernames and passwords
-users = zip(usernames, passwords) # zip objects are iterable.
+users = dict(zip(usernames, passwords)) # zip objects are iterable.
 
-for user in users:
-    print(user)
+for username, password in users.items():
+    print(f"Username: {username}, Password: {password}")
