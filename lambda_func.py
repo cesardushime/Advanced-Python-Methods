@@ -3,6 +3,7 @@
 # Syntax: lambda arguments : expression
 # The expression is executed and the result is returned.
 
+from functools import reduce
 
 double = lambda x: x * 2
 add = lambda x, y: x + y
@@ -37,5 +38,12 @@ print(even_numbers) # [2, 4, 6, 8, 10]
 # map() function is used to apply a given function to all the items in an input_list.
 # Syntax: map(function, iterable)
 
-squared_numbers = list(map(lambda x: x ** 2, numbers))
-print(squared_numbers) # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# squaring all evens in the list
+squared_numbers = list(map(lambda x: x ** 2, even_numbers))
+
+# reduce() function is used to apply a function to the elements of an iterable in a rolling computation. It performs a pair-wise operation on the elements of the iterable.
+# The reduce() function is defined in the functools module.
+# Syntax: reduce(function, iterable)
+
+sum = reduce(lambda x, y: x + y, squared_numbers)
+print(sum) # 220, sum of all squared even numbers in the list
